@@ -1,0 +1,247 @@
+html,body{
+	height:100%;
+	margin:0;
+	background: #d8d8d8
+}
+body{
+	color:#58595b;
+	font-family: "europa";
+	font-weight: normal;
+	font-style: normal;
+	font-size: 100%;
+	line-height: 1.5;
+	position: relative;
+	cursor: auto;
+	letter-spacing: 0.05rem;
+	-webkit-font-smoothing: subpixel-antialiased
+}
+#top{
+	background:url('/img/background.jpeg');
+	background-attachment: fixed;
+	background-position:  bottom;
+	background-size:cover;
+	height:60%;
+	width:100%;
+}
+.contents {
+	display: inline-block;
+	text-align: center;
+}
+.profile{
+	width:50em;
+	background: white;
+	margin:0 auto;
+	position: relative;
+	padding:0px 120px;
+}
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     position: relative;
+     text-align: center;
+}
+.avatar-container{
+	width:25em;
+	text-align:center;
+	position: absolute;
+	left:50%;
+	right:50%;
+	top:-6em;
+	margin-left:-12.5em;
+}
+.avatar-container img.avatar{
+	width:13em;
+	height:12em;
+	border-radius:100%;
+	margin-bottom:10px;
+}
+.avatar-text{
+	/* TODO */
+}
+h1{
+	color:#4fbfa6;
+	font-size:18pt;
+	font-weight:400;
+	margin:0px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+h2{
+	font-size:12pt;
+	font-weight: 200;
+	margin:0px;
+	margin-left: auto;
+	margin-right: auto;
+	text-decoration: underline;
+}
+.us {
+	display: inline-block;
+}
+a{	
+	color:#58595b;
+	text-decoration: none;
+}
+a:hover{
+	color:#4fbfa6;
+	display: inline-block;
+}
+.resume-left {
+	float: left;
+	width: 50%;
+	margin-top:200px;
+	text-align:center;
+}
+.resume-right {
+	float: left;
+	width: 50%;
+	margin-top:200px;
+	text-align:center;
+}
+.r-left{
+	float: left;
+	width: 33.3%;
+	margin-top:50px;
+	text-align:center;
+	padding-bottom: 10px;
+	height: 20em;
+}
+.resume-middle{
+	text-align:center;
+	position:relative;
+}
+.module-leftright{
+	padding-left:10px;
+	padding-right: 10px;
+	border-right:3px solid #4fbfa6;
+}
+.module{
+	margin-bottom:30px;
+}
+.module .title,.module .sub-title, .module2 .title {
+	color:#4fbfa6;
+	font-size:14pt;
+	font-weight:400;
+	text-align: center;
+	text-decoration: underline;
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto
+}
+.module p{
+	font-weight:333;
+	font-size:10pt;
+	line-height:12pt;
+	letter-spacing: 0.1rem;
+	word-spacing: 0.1rem;
+	text-rendering: optimizeLegibility;
+	text-align: center;
+	-webkit-font-smoothing: subpixel-antialiased
+}
+.module-right{
+	padding-left:10px;
+	padding-right: 10px;
+	position: relative;
+}
+.about{
+	/*width: 50em; */
+	padding-bottom: 50px;
+	margin-left: 66px;
+	margin-right: 66px;
+}
+.warranty{
+	width: 50em;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 50px;
+}
+div.img {
+    text-align: center;
+/*
+    padding: 5px;
+    height: auto;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    */
+}
+img{
+	overflow: hidden;
+    vertical-align: middle;
+    max-height: 95%
+}
+
+/*Navigation*/
+ 
+#nav {
+    font: 12px/30px Helvetica, sans-serif;
+    text-align: center;
+    width: auto;
+}
+ 
+#nav a {
+    background: #444;
+    color: #fff;
+    margin: 1px;
+    width: 60px;
+    height: 30px;
+    float: left;
+    text-decoration: none;
+    -webkit-transition: all 0.5s ease;
+    padding: 7px;
+    text-align: center;
+}
+ 
+#nav a:hover {
+    background: #6fcbf3;
+}
+
+/* float clearing for IE6 */
+* html .clearfix{
+  height: 1%;
+  overflow: visible;
+}
+ 
+/* float clearing for IE7 */
+*+html .clearfix{
+  min-height: 1%;
+}
+ 
+/* float clearing for everyone else */
+.clearfix:after{
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  font-size: 0;
+}
+
+div.scrollingHotSpotLeft{
+	display: block;
+	opacity: 0;
+}
+
+#makeMeScrollable div.scrollableArea *{
+	width: 10%;
+	height: 300px;
+	position: relative;
+	display: block
+	float: left;
+	margin: 0;
+	padding: 0;
+	/* If you don't want the images in the scroller to be selectable, try the following
+		block of code. It's just a nice feature that prevent the images from
+		accidentally becoming selected/inverted when the user interacts with the scroller. 
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none; */
+}
