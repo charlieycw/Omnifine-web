@@ -177,71 +177,22 @@ img{
     max-height: 95%
 }
 
-/*Navigation*/
- 
-#nav {
-    font: 12px/30px Helvetica, sans-serif;
-    text-align: center;
-    width: auto;
-}
- 
-#nav a {
-    background: #444;
-    color: #fff;
-    margin: 1px;
-    width: 60px;
-    height: 30px;
-    float: left;
-    text-decoration: none;
-    -webkit-transition: all 0.5s ease;
-    padding: 7px;
-    text-align: center;
-}
- 
-#nav a:hover {
-    background: #6fcbf3;
+.thumbnails img{
+	height: 80px;
+	border 4px solid #555;
+	padding: 1px;
+	margin: 0 10px 10px 0;
 }
 
-/* float clearing for IE6 */
-* html .clearfix{
-  height: 1%;
-  overflow: visible;
-}
- 
-/* float clearing for IE7 */
-*+html .clearfix{
-  min-height: 1%;
-}
- 
-/* float clearing for everyone else */
-.clearfix:after{
-  clear: both;
-  content: ".";
-  display: block;
-  height: 0;
-  visibility: hidden;
-  font-size: 0;
+.thumbnails img:hover {
+	border: 4px solid #00cff;
+	cursor: pointer;
 }
 
-div.scrollingHotSpotLeft{
-	display: block;
-	opacity: 0;
+.preview img {
+	border: 4px solid #444;
+	padding: 1px;
+	width: 800px;
 }
 
-#makeMeScrollable div.scrollableArea *{
-	width: 10%;
-	height: 300px;
-	position: relative;
-	display: block
-	float: left;
-	margin: 0;
-	padding: 0;
-	/* If you don't want the images in the scroller to be selectable, try the following
-		block of code. It's just a nice feature that prevent the images from
-		accidentally becoming selected/inverted when the user interacts with the scroller. 
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-o-user-select: none;
-	user-select: none; */
 }
