@@ -1,7 +1,7 @@
 html,body{
 	height:100%;
 	margin:0;
-	background: #d8d8d8
+	background: #FFF
 }
 body{
 	color:#58595b;
@@ -16,23 +16,24 @@ body{
 	-webkit-font-smoothing: subpixel-antialiased
 }
 #top{
-	background:url('/img/background.jpeg');
+	background:url('../images/screendoor.jpg');
 	background-attachment: fixed;
-	background-position:  bottom;
-	background-size:cover;
-	height:60%;
+	background-position: center;
+	background-size: 90%;
+	height:30%;
 	width:100%;
+	position: center;
 }
 .contents {
 	display: inline-block;
 	text-align: center;
 }
 .profile{
-	width:50em;
-	background: white;
-	margin:0 auto;
+	width: auto;
+	background: transparent;
+	margin: inherit;
 	position: relative;
-	padding:0px 120px;
+	padding:0px 0px;
 }
 .clearfix:after {
      visibility: hidden;
@@ -42,22 +43,21 @@ body{
      clear: both;
      height: 0;
      position: relative;
-     text-align: center;
+     text-align: inherit;
 }
 .avatar-container{
-	width:25em;
-	text-align:center;
-	position: absolute;
-	left:50%;
-	right:50%;
+	width: auto;
+	text-align: center;
+	position: center;
 	top:-6em;
-	margin-left:-12.5em;
+	margin: auto;
 }
 .avatar-container img.avatar{
 	width:13em;
 	height:12em;
 	border-radius:100%;
 	margin-bottom:10px;
+	padding: 5px;
 }
 .avatar-text{
 	/* TODO */
@@ -79,8 +79,9 @@ h2{
 	margin-right: auto;
 	text-decoration: underline;
 }
-.us {
+.sectiondivider {
 	display: inline-block;
+	margin: auto;
 }
 a{	
 	color:#58595b;
@@ -154,23 +155,16 @@ a:hover{
 	margin-right: 66px;
 }
 .warranty{
-	width: 50em;
+	width: auto;
 	margin-left: auto;
 	margin-right: auto;
 	padding-bottom: 50px;
+	text-align: center;
 }
 div.img {
     text-align: center;
-/*
-    padding: 5px;
-    height: auto;
-    width: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    top: 50%;
-    */
 }
+
 img{
 	overflow: hidden;
     vertical-align: middle;
@@ -192,7 +186,9 @@ img{
 .preview img {
 	border: 4px solid #444;
 	padding: 1px;
-	width: 800px;
+	width: 95%;
+	height: auto;
+	margin-bottom: 10px;
 }
 
 }
