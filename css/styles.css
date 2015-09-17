@@ -91,19 +91,13 @@ a:hover{
 	color:#4fbfa6;
 	display: inline-block;
 }
-.resume-left {
+.module-left {
 	float: left;
 	width: 50%;
-	margin-top:200px;
+	margin-top:10%;
 	text-align:center;
 }
-.resume-right {
-	float: left;
-	width: 50%;
-	margin-top:200px;
-	text-align:center;
-}
-.r-left{
+.r-div{
 	float: left;
 	width: 33.3%;
 	margin-top:50px;
@@ -111,17 +105,29 @@ a:hover{
 	padding-bottom: 10px;
 	height: 20em;
 }
-.resume-middle{
+.module-middle{
 	text-align:center;
 	position:relative;
 }
-.module-leftright{
+.module-div{
 	padding-left:10px;
 	padding-right: 10px;
 	border-right:3px solid #4fbfa6;
 }
-.module{
-	margin-bottom:30px;
+
+.module-picdiv{
+	padding-left: 5px;
+}
+
+.module-picture{
+
+}
+
+.textformat{
+	padding: 10px;
+	margin: 10px;
+	text-align: center;
+	max-width: 85%;
 }
 .module .title,.module .sub-title, .module2 .title {
 	color:#4fbfa6;
@@ -143,24 +149,14 @@ a:hover{
 	text-align: center;
 	-webkit-font-smoothing: subpixel-antialiased
 }
-.module-right{
-	padding-left:10px;
-	padding-right: 10px;
-	position: relative;
-}
-.about{
-	/*width: 50em; */
-	padding-bottom: 50px;
-	margin-left: 66px;
-	margin-right: 66px;
-}
-.warranty{
-	width: auto;
-	margin-left: auto;
-	margin-right: auto;
-	padding-bottom: 50px;
+
+.header{
+	margin: 10px;
+	padding: 10px;
 	text-align: center;
+	width: fixed;
 }
+
 div.img {
     text-align: center;
 }
