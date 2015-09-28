@@ -63,8 +63,8 @@ body{
 	/* TODO */
 }
 h1{
-	color:#4fbfa6;
-	font-size:18pt;
+	color:#000;
+	font-size:25pt;
 	font-weight:400;
 	margin:0px;
 	text-align: center;
@@ -72,7 +72,7 @@ h1{
 	margin-right: auto;
 }
 h2{
-	font-size:12pt;
+	font-size:15pt;
 	font-weight: 200;
 	margin:0px;
 	margin-left: auto;
@@ -83,50 +83,40 @@ h2{
 	display: inline-block;
 	margin: auto;
 	margin: 10px;
+	padding-top: 50px;
 }
 a{	
-	color:#58595b;
+	color:#2f2bbf;
 	text-decoration: none;
 }
 a:hover{
-	color:#4fbfa6;
+	color:#000;
 	display: inline-block;
 }
 .module-left {
 	float: left;
 	width: 50%;
-	margin-top:5%;
-	margin-bottom: 5%;
 	text-align:center;
 }
 .module-productl{
 	float: left;
 	min-width: 130px;
 	width: 30%;
-	margin-top:5%;
-	margin-bottom:5%;
 	text-align:center;
 }
 .module-productr{
 	float:left;
-	margin-top:5%;
-	margin-bottom: 5%;
 	text-align:center;
 	margin-left: auto;
 	margin-right: auto;
 	width: 70%;
 }
-.moduleside{
-
-}
 
 .r-div{
 	float: left;
 	width: 33.3%;
-	margin-top:50px;
-	text-align:center;
-	padding-bottom: 10px;
-	height: 20em;
+	padding-top:20px;
+	height: auto;
 }
 .module-middle{
 	text-align:center;
@@ -151,13 +141,12 @@ a:hover{
 }
 
 .textformat{
-	padding: 20px;
 	margin: 20px;
 	text-align: center;
 	width: auto;
 }
 .module .title,.module .sub-title, .module2 .title {
-	color:#4fbfa6;
+	color:#2f2bbf;
 	font-size:14pt;
 	font-weight:400;
 	text-align: center;
@@ -165,6 +154,9 @@ a:hover{
 	font-weight: bold;
 	margin-left: auto;
 	margin-right: auto
+	margin-top: 5%
+	margin-bottom: 5%;
+	text-align:center;
 }
 .module p{
 	font-weight:333;
@@ -195,39 +187,51 @@ img{
 }
 
 .thumbnails img{
-	height: 50px;
+	height: 100px;
 	width: auto;	
-	padding: 1px;
+	padding: 1%;
 	margin: 0 1% 1% 0;
 }
 
 .thumbnails img:hover {
-	border: 0px solid #FFFF00;
 	cursor: pointer;
-	width: fixed;
+	width: auto;
+}
+
+.pviewhome img{
+	border: 4px solid#444;
+	padding: 1px;
+	max-width: 85%;
+	width: auto;
+	height: auto;
+	margin-bottom: 10px;
 }
 
 .preview img {
 	border: 4px solid #444;
-	padding: 1px;
-	width: 95%;
-	max-width: 685px;
+	padding: 1%;
+	max-width: 80%;
+	width: auto;
+	max-height: 80%;
 	height: auto;
-	margin-bottom: 10px;
+	overflow: hidden;
 }
+
 .preview2 img{
 	border: 4px solid #444;
-	padding: 1px;
-	width: 95%;
-	max-width: 685px;
+	padding: 1%;
+	max-width: 80%;
+	width: auto;
 	height: auto;
-	margin-bottom: 10px;
+	max-height: 80%;
+	overflow: hidden;
 }
 .preview3 img{
 	border: 4px solid #444;
-	padding: 1px;
-	width: 95%;
-	max-width: 685px;
+	padding: 1%;
+	max-width: 80%;
+	width: auto;
 	height: auto;
-	margin-bottom: 10px;
+	max-height: 80%;
+	overflow: hidden;
 }
