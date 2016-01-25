@@ -1,123 +1,256 @@
 <html>
 <head>
-	<title>Omnifine Products</title>
+	<title>Omnifine</title>
 	<link rel="stylesheet" type="text/css" href="../css/styles.css"/>
-</head>
-<body>
-	<section id="top" class="top"></section>
 
-	<section class="profile clearfix">
-		<div class="avatar-container">
-			<img class="avatar" src="../images/screenwindow.jpg">
-			<div class="avatar-text">
-				<h1>Omnifine - Home</h1>
-				<div id="nav" class="clearfix">
-					<a href="Home.html#top">Home</a> |
-					<a href="Products.html">Products</a> |
-					<a href="Gallery.html">Gallery</a>
+
+	<style>
+	.floatingHeader {
+		position: fixed;
+		top: 0;
+		visibility: hidden;
+	}
+	</style>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script>
+	function UpdateTableHeaders() {
+		$(".persist-area").each(function() {
+
+			var el             = $(this),
+			offset         = el.offset(),
+			scrollTop      = $(window).scrollTop(),
+			floatingHeader = $(".floatingHeader", this)
+
+			if ((scrollTop > offset.top) && (scrollTop < offset.top + el.height())) {
+				floatingHeader.css({
+					"visibility": "visible"
+				});
+			} else {
+				floatingHeader.css({
+					"visibility": "hidden"
+				});      
+			};
+		});
+	}
+
+	    // DOM Ready      
+	    $(function() {
+
+	    	var clonedHeaderRow;
+
+	    	$(".persist-area").each(function() {
+	    		clonedHeaderRow = $(".persist-header", this);
+	    		clonedHeaderRow
+	    		.before(clonedHeaderRow.clone())
+	    		.css("width", clonedHeaderRow.width())
+	    		.addClass("floatingHeader");
+	    	});
+
+	    	$(window)
+	    	.scroll(UpdateTableHeaders)
+	    	.trigger("scroll");
+	    });
+	    </script>
+
+	    <script id="abine.stub.Google Analytics">var abPrm={};var abNoOp=function(i,a){return (a&&a.length?a[0]:null)||true;},abSC=function(n,v){document.cookie=n+'='+v+';path=/;expires='+(new Date((new Date()).getTime()+(30000*60*60*24))).toGMTString();},abGC=function(n){return document.cookie.indexOf(n+'=')!=-1;},abAddNoOpMethods=function(o,m){m=m.split(',');for(var i=0;i<m.length;i++){if(m[i].match(/^#/)){o['get'+m[i].substr(1)]=o['set'+m[i].substr(1)]=abNoOp;}else{o[m[i]]=abNoOp;}}};var abClickEvent=function(n){if(n.click){n.click();}else{var e=n.ownerDocument.createEvent('MouseEvents');e.initMouseEvent('click',true, true, n.ownerDocument.defaultView, 1,0,0,0,0,false,false,false,false,0,null);n.dispatchEvent(e);}};var abTrkr={},abGT=function(){return abTrkr},_gat={_getTracker:abGT,_createTracker:abGT,_getTrackerByName:abGT,_anonymizeIp:abNoOp},__utmSetTrans=__utmLinkerUrl=__utmLinkPost=__utmSetVar=__utmVisitorCode=abNoOp,_gaq={_createAsyncTracker:abTrkr,_getAsyncTracker:abTrkr,push:function(a){for (var b = arguments, c = 0, d = 0; d < b.length; d++) {try {if (typeof b[d] === 'function') b[d]();else {var e = '', f = b[d][0], k = f.lastIndexOf('.');k > 0 && (e = f[z](0, k), f = f[z](k + 1));var p = e == '_gat' ? _gat : e == '_gaq' ? _gaq : _gat._getTracker(e);p[f].apply(p, b[d].slice(1))}} catch (r) {c++}}return c;}};abAddNoOpMethods(abTrkr,'_deleteCustomVar,_getName,_getAccount,_getVersion,_getVisitorCustomVar,_initData,_setAccount,_setCookiePersistence,_setCustomVar,_setSampleRate,_setSessionTimeout,_setSessionCookieTimeout,_setVar,_setVisitorCookieTimeout,_trackPageview,_setAllowAnchor,_setCampContentKey,_setCampMediumKey,_setCampNameKey,_setCampNOKey,_setCampSourceKey,_setCampTermKey,_setCampaignTrack,_setCampaignCookieTimeout,_setCookieTimeout,_setReferrerOverride,_cookiePathCopy,_getLinkerUrl,_linkByPost,_setAllowHash,_setAllowLinker,_setCookiePath,_setDomainName,_addItem,_addTrans,_trackTrans,_trackEvent,_addIgnoredOrganic,_addIgnoredRef,_addOrganic,_clearIgnoredOrganic,_clearIgnoredRef,_clearOrganic,_trackSocial,_getClientInfo,_getDetectFlash,_getDetectTitle,_setClientInfo,_setDetectFlash,_setDetectTitle,_getLocalGifPath,_getServiceMode,_setLocalGifPath,_setLocalRemoteServerMode,_setLocalServerMode,_setRemoteServerMode,_trackPageLoadTime,_addDevId');abTrkr._link=__utmLinker=function(l){if(l)location.href=l;};if(typeof(urchinTracker)=='undefined')urchinTracker=abNoOp;
+	    </script>
+
+	</head>
+
+
+	<body>
+		<div class="persist-area">
+			<div class="left-header">
+				<div class="logo">
+					<img src="../images/logo.png">
 				</div>
 			</div>
-		</div>    
-	</section>
-
-	<div id="sdoors" class="sectiondivider">
-		<article class="module-productl">
-			<div class="module module-picdiv">
-				<span class="title">Retractable Screen Doors</span> <br>
-				<div class="img">
-					<a target="_blank" href="screendoor.gif">
-						<img src="screendoor.gif" alt="Screen Door">
-					</a>
+			<div class="middle-header">
+				<div class="bottom-middle-header">
+					<div id="nav" class="clearfix">
+						<a href="Home.html#top">Home</a> 
+						<b> | </b>
+						<a href="Products.html">Products</a>
+						<b> | </b>
+						<a href="Gallery.html">Gallery</a>
+					</div>
 				</div>
-				<p class="textformat">
-					sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodot dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-				</p>
 			</div>
-		</article>
-		<article class="module-productr">
-			<article class="module-middle">
-				<div class="preview img" align="center">
-					<img name="preview" src="../images/single.jpg" alt="" />
+			<div class="right-header">
+				<div class="logo">
+					<img onclick="javascript:location.href='http://www.bbb.org/mbc/business-reviews/screens-door-and-window/omnifine-retractable-screens-and-awnings-in-richmond-bc-1233711'" style="cursor: pointer;" src="../images/bbb.png">
 				</div>
-				<div class="thumbnails">
-					<img onmouseover="preview.src=single.src" name="single" src="../images/single.jpg" alt=""/>
-					<img onmouseover="preview.src=single3.src" name="single3" src="../images/single3.jpg" alt=""/>
-					<img onmouseover="preview.src=single7.src" name="single7" src="../images/single7.jpg" alt=""/>
+				<c> Contact: 604-340-1136 </c>
+			</div>
+		</div>
+
+		<div id="sdoors" class="sectiondivider">
+			<article class="module-productl">
+				<div class="module module-picdiv">
+					<span class="title">Retractable Screen Doors</span> <br>
+
+					<p class="textformat">
+
+						The Omnifine retractable screen door is made of the highest quality extruded aluminum with the following main features:
+						<br><br>
+						Customized fit for varying door styles, with single-doors up to 47" x 96", and french-doors up to 96" x 96".
+						<br><br>
+						Doubled-sided magnet connectors running from top to bottom.
+						<br><br>
+						Textile fabric inside frame to hold onto screen.
+						<br><br>
+						Four sided aluminum frame with screen made from high grade fiberglass. 
+						<br><br>
+						Perfectly designed for French-Doors, Inswing/Outswing doors, Sliding Patio doors.
+					</p>
 				</div>
 			</article>
-		</article>
-	</div>
+			<article class="module-productr">
+				<article class="module-middle">
+					<div class="preview img" align="center">
+						<img name="preview" src="../images/single.jpg" alt="" />
+					</div>
+					<div class="thumbnails">
+						<img onmouseover="preview.src=single.src" name="single" src="../images/single.jpg" alt=""/>
+						<img onmouseover="preview.src=single3.src" name="single3" src="../images/single3.jpg" alt=""/>
+						<img onmouseover="preview.src=double6.src" name="double6" src="../images/double6.jpg" alt=""/>
+					</div>
+				</article>
+			</article>
+		</div>
 
-	<div id="swindows" class="sectiondivider">
-		<article class="module-productr">
-			<article class="module-middle">
-				<div class="preview2" align="center">
-					<img = name="preview2" src="../images/window17.jpg" alt=""/>
-				</div>
-				<div class="thumbnails">
-					<img onmouseover="preview2.src=window17.src" name="window17" src="../images/window17.jpg" alt=""/>
-					<img onmouseover="preview2.src=window20.src" name="window20" src="../images/window20.jpg" alt=""/>
-					<img onmouseover="preview2.src=window14.src" name="window14" src="../images/window14.jpg" alt=""/>
+		<div id="swindows" class="sectiondivider">
+			<article class="module-productr">
+				<article class="module-middle">
+					<div class="preview2" align="center">
+						<img = name="preview2" src="../images/window17.jpg" alt=""/>
+					</div>
+					<div class="thumbnails">
+						<img onmouseover="preview2.src=window17.src" name="window17" src="../images/window17.jpg" alt=""/>
+						<img onmouseover="preview2.src=window16.src" name="window16" src="../images/window16.jpg" alt=""/>
+						<img onmouseover="preview2.src=window1.src" name="window1" src="../images/window1.jpg" alt=""/>
+					</div>
+				</article>
+			</article>
+			<article class="module-productl">
+				<div class="module module-picdiv">
+					<span class="title">Retractable Screen Windows</span> <br><br>
+					<p class="textformat">
+						The Omnifine retractable screen window is completely redesigned from our Retractable Screen Doors selection. Made of the highest quality extruded aluminum, the main features include: <br><br>
+						Custom fit (size from 23" x 59" to 55" x 66"). <br><br>
+						Matched for horizontal opened window. <br><br>
+						Screen made from high grade fiberglass.
+					</p>
 				</div>
 			</article>
-		</article>
-		<article class="module-productl">
-			<div class="module module-picdiv">
-				<span class="title">Retractable Screen Windows</span> <br>
-				<div class="img">
-					<a target="_blank" href="screendoor.gif">
-						<img src="screendoor.gif" alt="Screen Door">
-					</a>
-				</div>
-				<p class="textformat">
-					sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodot dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-				</p>
-			</div>
-		</article>
-	</div>
+		</div>
 
-	<div id="awnings" class="sectiondivider">
-		<article class="module-productl">
-			<div class="module module-picdiv">
-				<span class="title">Retractable Awnings</span> <br>
-				<div class="img">
-					<a target="_blank" href="screendoor.gif">
-						<img src="screendoor.gif" alt="Screen Door">
-					</a>
-				</div>
-				<p class="textformat">
-					sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodot dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-				</p>
-			</div>
-		</article>
-		<article class="module-productr">
-			<article class="module-middle">
-				<div class="preview3" align="center">
-					<img name="preview3" src="../images/awning10.jpg" alt="" />
-				</div>
-				<div class="thumbnails">
-					<img onmouseover="preview3.src=awning10.src" name="awning10" src="../images/awning10.jpg" alt=""/>
-					<img onmouseover="preview3.src=awning3.src" name="awning3" src="../images/awning3.jpg" alt=""/>
-					<img onmouseover="preview3.src=awning26.src" name="awning26" src="../images/awning26.jpg" alt=""/>
+		<div id="Awnings" class="sectiondivider">
+			<article class="module-productl">
+				<div class="module module-picdiv">
+					<span class="title">Awnings</span> <br><br>
+					<p class="textformat">
+						Protect your family from UV radiation effectively European-style awnings.<br><br>
+
+						1. Casette Awning (remote-controlled)<br>
+						A fashionable luxury outdoor shading product, the screen can be stored completely inside the cassette with the push of a button. <br>
+						This design keeps the screen, motor and components protected from rain, extending use-life of the awning. The awning is remains an elegant yet practical solution for your beautiful home. Please inquire about specific size and fabric options.<br><br>
+
+						2. Common awning (manual)
+						Extending your living space, it is a perfect fit for your home, store, and various other buildings. This package is operated by hand. Please inquire about specific size and fabric options.
+					</p>
 				</div>
 			</article>
-		</article>
-	</div>
+			<article class="module-productr">
+				<article class="module-middle">
+					<div class="preview3" align="center">
+						<img name="preview3" src="../images/awning26.jpg" alt="" />
+					</div>
+					<div class="thumbnails">
+						<img onmouseover="preview3.src=awning26.src" name="awning26" src="../images/awning26.jpg" alt=""/>
+						<img onmouseover="preview3.src=awning13.src" name="awning13" src="../images/awning13.jpg" alt=""/>
+						<img onmouseover="preview3.src=awning15.src" name="awning15" src="../images/awning15.jpg" alt=""/>
+					</div>
+				</article>
+			</article>
+		</div>
 
-	<div class="sectiondivider" align="center">
-				Copyright&copy 2015 Omnifine
-	</div>
-</body>
-</html>
+		<div id="Blinds" class="sectiondivider">
+			<article class="module-productr">
+				<article class="module-middle">
+					<div class="preview4" align="center">
+						<img = name="preview4" src="../images/blinds6.jpg" alt=""/>
+					</div>
+					<div class="thumbnails">
+						<img onmouseover="preview4.src=blinds6.src" name="blinds6" src="../images/blinds6.jpg" alt=""/>
+						<img onmouseover="preview4.src=blinds4.src" name="blinds4" src="../images/blinds4.jpg" alt=""/>
+						<img onmouseover="preview4.src=blinds8.src" name="blinds8" src="../images/blinds8.jpg" alt=""/>
+					</div>
+				</article>
+			</article>
+			<article class="module-productl">
+				<div class="module module-picdiv">
+					<span class="title">Blinds and Shades</span> <br>
+					<p class="textformat">
+						Distributor for Canadian Blinds Manufacturing providing a custom fit for your windows. 
+					</p>
+				</div>
+			</article>
+		</div>
+
+		<div id="canopy" class="sectiondivider">
+			<article class="module-productl">
+				<div class="module module-picdiv">
+					<span class="title">Canopy</span> <br>
+
+					<p class="textformat">
+						Our all-weather purposed canopy are made with flexible polycarbonate and . Supplied by the lead manufacturing of door canopy in China, the practical design is perfect for our west-coast weather with installation over your doors and windows. Features include: <br><br>
+
+						12 class typhoon resistance. <br><br>
+						99% UV protection both sides. <br><br>
+						Scratch and impact resistance. <br><br>
+						Anti-yellowing and aging resistance. <br><br>
+						Chemical resistance; Low temperature resistance and retardent. <br><br>
+						Safety insurance with the qualification under 376 strict tests. <br><br>
+						Environment friendly.
+					</p>
+				</div>
+			</article>
+			<article class="module-productr">
+				<article class="module-middle">
+					<div class="preview5" align="center">
+						<img name="preview5" src="../images/canopy.jpg" alt="" />
+					</div>
+					<div class="thumbnails">
+						<img onmouseover="preview5.src=canopy.src" name="canopy" src="../images/canopy.jpg" alt=""/>
+						<img onmouseover="preview5.src=canopy2.src" name="canopy2" src="../images/canopy2.jpg" alt=""/>
+						<img onmouseover="preview5.src=canopy4.src" name="canopy4" src="../images/canopy4.jpg" alt=""/>
+					</div>
+				</article>
+			</article>
+		</div>
+
+
+		<div id="warranty" class="sectiondivider">
+			<article class="module-middle">
+				<div class="module">
+					<span class="title">Warranty</span> <br>
+					<p class="textformat">
+						We offer a limited lifetime warranty on all components, excluding the screen fabric. Defective components will be replaced free of charge for up to 2 year from the date of installation. After 2 year we will provide replacement components at no charge but a service installation charge will apply. <br><br>
+
+						This warranty is void if the Retractable Screen is not installed by one of our authorized dealers. If a component is defective in your Retractable Screen, please report this to the dealer/installer. <br><br>
+
+						This warranty applies only to the original purchaser in residential installations and is not transferable to another party. The retractable screen cannot be alerted, modified or moved in any way. <br><br>
+
+						This warranty does not cover damage caused by misuse, abuse, scratching, airborne or applied corrosive contaminants, tornadoes, hurricanes, acts of God or other causes beyond the control of Omnifine Company. This warranty only applies to defects that impair the function of the retractable screen.
+					</p>
+				</div>
+			</article>
+		</div>
+
+		<div class="sectiondivider" align="center">
+			Copyright&copy 2015 Omnifine
+		</div>
+	</body>
+	</html>

@@ -2,68 +2,131 @@
 <head>
 	<title>Omnifine</title>
 	<link rel="stylesheet" type="text/css" href="../css/styles.css"/>
+
+
+	<style>
+	.floatingHeader {
+		position: fixed;
+		top: 0;
+		visibility: hidden;
+	}
+	</style>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script>
+	function UpdateTableHeaders() {
+		$(".persist-area").each(function() {
+
+			var el             = $(this),
+			offset         = el.offset(),
+			scrollTop      = $(window).scrollTop(),
+			floatingHeader = $(".floatingHeader", this)
+
+			if ((scrollTop > offset.top) && (scrollTop < offset.top + el.height())) {
+				floatingHeader.css({
+					"visibility": "visible"
+				});
+			} else {
+				floatingHeader.css({
+					"visibility": "hidden"
+				});      
+			};
+		});
+	}
+
+    // DOM Ready      
+    $(function() {
+
+    	var clonedHeaderRow;
+
+    	$(".persist-area").each(function() {
+    		clonedHeaderRow = $(".persist-header", this);
+    		clonedHeaderRow
+    		.before(clonedHeaderRow.clone())
+    		.css("width", clonedHeaderRow.width())
+    		.addClass("floatingHeader");
+    	});
+
+    	$(window)
+    	.scroll(UpdateTableHeaders)
+    	.trigger("scroll");
+    });
+    </script>
+
+    <script id="abine.stub.Google Analytics">var abPrm={};var abNoOp=function(i,a){return (a&&a.length?a[0]:null)||true;},abSC=function(n,v){document.cookie=n+'='+v+';path=/;expires='+(new Date((new Date()).getTime()+(30000*60*60*24))).toGMTString();},abGC=function(n){return document.cookie.indexOf(n+'=')!=-1;},abAddNoOpMethods=function(o,m){m=m.split(',');for(var i=0;i<m.length;i++){if(m[i].match(/^#/)){o['get'+m[i].substr(1)]=o['set'+m[i].substr(1)]=abNoOp;}else{o[m[i]]=abNoOp;}}};var abClickEvent=function(n){if(n.click){n.click();}else{var e=n.ownerDocument.createEvent('MouseEvents');e.initMouseEvent('click',true, true, n.ownerDocument.defaultView, 1,0,0,0,0,false,false,false,false,0,null);n.dispatchEvent(e);}};var abTrkr={},abGT=function(){return abTrkr},_gat={_getTracker:abGT,_createTracker:abGT,_getTrackerByName:abGT,_anonymizeIp:abNoOp},__utmSetTrans=__utmLinkerUrl=__utmLinkPost=__utmSetVar=__utmVisitorCode=abNoOp,_gaq={_createAsyncTracker:abTrkr,_getAsyncTracker:abTrkr,push:function(a){for (var b = arguments, c = 0, d = 0; d < b.length; d++) {try {if (typeof b[d] === 'function') b[d]();else {var e = '', f = b[d][0], k = f.lastIndexOf('.');k > 0 && (e = f[z](0, k), f = f[z](k + 1));var p = e == '_gat' ? _gat : e == '_gaq' ? _gaq : _gat._getTracker(e);p[f].apply(p, b[d].slice(1))}} catch (r) {c++}}return c;}};abAddNoOpMethods(abTrkr,'_deleteCustomVar,_getName,_getAccount,_getVersion,_getVisitorCustomVar,_initData,_setAccount,_setCookiePersistence,_setCustomVar,_setSampleRate,_setSessionTimeout,_setSessionCookieTimeout,_setVar,_setVisitorCookieTimeout,_trackPageview,_setAllowAnchor,_setCampContentKey,_setCampMediumKey,_setCampNameKey,_setCampNOKey,_setCampSourceKey,_setCampTermKey,_setCampaignTrack,_setCampaignCookieTimeout,_setCookieTimeout,_setReferrerOverride,_cookiePathCopy,_getLinkerUrl,_linkByPost,_setAllowHash,_setAllowLinker,_setCookiePath,_setDomainName,_addItem,_addTrans,_trackTrans,_trackEvent,_addIgnoredOrganic,_addIgnoredRef,_addOrganic,_clearIgnoredOrganic,_clearIgnoredRef,_clearOrganic,_trackSocial,_getClientInfo,_getDetectFlash,_getDetectTitle,_setClientInfo,_setDetectFlash,_setDetectTitle,_getLocalGifPath,_getServiceMode,_setLocalGifPath,_setLocalRemoteServerMode,_setLocalServerMode,_setRemoteServerMode,_trackPageLoadTime,_addDevId');abTrkr._link=__utmLinker=function(l){if(l)location.href=l;};if(typeof(urchinTracker)=='undefined')urchinTracker=abNoOp;
+    </script>
+
 </head>
+
+
 <body>
-
-	<section id="top" class="top"></section>
-
-	<section class="profile clearfix">
-		<div class="avatar-container">
-			<img class="avatar" src="../images/screenwindow.jpg">
-			<div class="avatar-text">
-				<h1>Omnifine - Home</h1>
+	<div class="persist-area">
+		<div class="left-header">
+			<div class="logo">
+				<img src="../images/logo.png">
+			</div>
+		</div>
+		<div class="middle-header">
+			<div class="bottom-middle-header">
 				<div id="nav" class="clearfix">
-					<a href="Home.html#top">Home</a> |
-					<a href="Products.html">Products</a> |
+					<a href="Home.html#top">Home</a> 
+					<b> | </b>
+					<a href="Products.html">Products</a>
+					<b> | </b>
 					<a href="Gallery.html">Gallery</a>
 				</div>
 			</div>
-		</div>    
-	</section>
+		</div>
+		<div class="right-header">
+			<div class="logo">
+				<img onclick="javascript:location.href='http://www.bbb.org/mbc/business-reviews/screens-door-and-window/omnifine-retractable-screens-and-awnings-in-richmond-bc-1233711'" style="cursor: pointer;" src="../images/bbb.png">
+			</div>
+			<c> Contact: 604-340-1136 </c>
+		</div>
+	</div>
 
 	<div class="slideshow-module">
 		<div class="csslider1 autoplay">
 			<input name="cs_anchor1" id="cs_slide1_0" type="radio" class="cs_anchor slide">
 			<input name="cs_anchor1" id="cs_slide1_1" type="radio" class="cs_anchor slide">
-			<input name="cs_anchor1" id="cs_slide1_2" type="radio" class="cs_anchor slide">
+			<input name="cs_anchor1" id="cs_slide1_2" type="radio" class="cs_anchor slide">			
 			<input name="cs_anchor1" id="cs_play1" type="radio" class="cs_anchor" checked="">
 			<input name="cs_anchor1" id="cs_pause1" type="radio" class="cs_anchor">
 			<ul>
 				<div style="width: 100%; visibility: hidden; font-size: 0px; line-height: 0;">
-					<img src="../images/awning28.jpg" style="width: 100%;">
+					<img onclick="javascript:location.href='Products.html'"
+					src="../images/awning19.jpg" style="width: 100%;">
 				</div>
 				<li class="num0 img">
-					<img src="../images/awning28.jpg" alt="Awning1" title="Awning">
+					<img onclick="javascript:location.href='Products.html#Awnings'" onmouseover="" style="cursor: pointer;" src="../images/awning19.jpg" alt="awning" title="Retractable Awning">
 				</li>
 				<li class="num1 img">
-					<img src="../images/awning27.jpg" alt="Awning2" title="Awning2">
+					<img onclick="javascript:location.href='Products.html#sdoors'" onmouseover="" style="cursor: pointer;" src="../images/double7.jpg" alt="sdoor" title="Screen Door">
 				</li>
 				<li class="num2 img">
-					<img src="../images/awning26.jpg" alt="Awning3" title="Awning3">
+					<img onclick="javascript:location.href='Products.html#swindows'" onmouseover="" style="cursor: pointer;" src="../images/window4.jpg" alt="window" title="Screen Window">
 				</li>
-
 			</ul>
 			<div class="cs_description">
 				<label class="num0">
-					<span class="cs_title"><span class="cs_wrapper">Awning1</span></span>
+					<span class="cs_title"><span class="cs_wrapper">Retractable Awning</span></span>
 
 				</label>
 				<label class="num1">
-					<span class="cs_title"><span class="cs_wrapper">Awning2</span></span>
+					<span class="cs_title"><span class="cs_wrapper">Retractable Screen Door</span></span>
 
 				</label>
 				<label class="num2">
-					<span class="cs_title"><span class="cs_wrapper">Awning3</span></span>
-
+					<span class="cs_title"><span class="cs_wrapper">Retractable Screen Window</span></span>
 				</label>
 			</div>
 
-			<div class="cs_arrowprev" src="../images/previous">
+			<div class="cs_arrowprev" src="../images/previous.png">
 				<label class="num0" for="cs_slide1_0"></label>
 				<label class="num1" for="cs_slide1_1"></label>
 				<label class="num2" for="cs_slide1_2"></label>
 			</div>
-			<div class="cs_arrownext">
+			<div class="cs_arrownext" src="../images/next.png">
 				<label class="num0" for="cs_slide1_0"></label>
 				<label class="num1" for="cs_slide1_1"></label>
 				<label class="num2" for="cs_slide1_2"></label>
@@ -86,95 +149,24 @@
 	</div>
 
 	<div id="intro" class="sectiondivider">
-		<div class="module-left">
-			<div class="module module-div">
+		<div class="module-middle">
+			<div class="module">
 				<span class="title">About Us</span><br>
 				<p class="textformat">
-					Omnifine Trade Ltd. is a Vancouver based in Lower Mainland specializing in Retractable Screen Doors, Windows, and Awnings. We have been providing clients with the best quality, service, and well-crafted screening products for homes and businesses. We offer an array of screen solutions in various models and colours, while providing class-leading services at an affordable price. 
+					Omnifine Trade Ltd. is a Vancouver based in Lower Mainland specializing in Retractable Screen Doors, Windows, and Awnings.
+					<br/>
+					<br/>
+					We have been providing clients with the best quality, service, and well-crafted screening products for homes and businesses. We offer an array of screen solutions in various models and colours, while providing class-leading services at an affordable price. 
 					<br/>
 					<br/>
 
 					As a valued member of the Better Business Bureau, we have received A+ rating in since 2005.
-
 					<br/>
 					<br/>
-
-					Past Events:
-					<a href="http://www.bchomeandgardenshow.com/BCHGS/EventsHome.aspx">2007, 2008, 2009 B.C. Home and Garden Show</a>
 				</p>
 			</div>
 		</div>
-		<article class="module-left">
-			<div class="module">
-				<span class="title">Contact Us</span>
-				<p class="textformat">
-					Phone: 604.340.1136 <br/>
-					Toll Free: <br/>
-					Email: info@omnifine.com <br/>
-					Website: https://www.omnifine.com <br/>
-				</p>
-			</div>
-		</article>
 	</div>
-
-	<div id="products" class="sectiondivider">
-		<article class="module-middle">
-			<div class="module">
-				<a href="Products.html"><span class="title">Products</span></a><br>
-				<p class="textformat"> I					sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodot dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-				</p>
-				<div class="module-middle">
-					<article class="r-div">
-						Retractable Screen Doors<br>
-						<div class="pviewhome">
-							<a target="_blank" href="Products.html#sdoors">
-								<img src="../images/double7.jpg" alt="">
-							</a>
-						</div>
-					</article>
-					<article class="r-div">
-						Retractable Screen Windows
-						<div class="pviewhome">
-							<a target="_blank" href="Products.html#swindows">
-								<img src="../images/window4.jpg" alt="Screen Window">
-							</a>
-						</div>
-					</article>
-					<article class="r-div">
-						Retractable Awnings<br>
-						<div class="pviewhome">
-							<a target="_blank" href="Products.html#awnings.jpg">
-								<img src="../images/awning19.jpg" alt="Screen Door" >
-							</a>
-						</div>
-					</article>
-				</div>
-			</div>
-		</article>
-	</div>
-
-	
-
-
-
-	<div id="warranty" class="sectiondivider">
-		<article class="module-middle">
-			<div class="module">
-				<span class="title">Warranty</span> <br>
-				<p class="textformat">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				</p>
-			</div>
-		</article>
-	</div>
-
 
 	<div class="sectiondivider" align="center">
 		Copyright&copy 2015 Omnifine

@@ -2,51 +2,116 @@
 <head>
 	<title>Omnifine</title>
 	<link rel="stylesheet" type="text/css" href="../css/styles.css"/>
-</head>
-<body>
 
-	<section id="top" class="top"></section>
 
-	<section class="profile clearfix">
-		<div class="avatar-container">
-			<img class="avatar" src="../images/screenwindow.jpg">
-			<div class="avatar-text">
-				<h1>Omnifine - Home</h1>
-				<div id="nav" class="clearfix">
-					<a href="Home.html#top">Home</a> |
-					<a href="Products.html">Products</a> |
-					<a href="Gallery.html">Gallery</a>
+	<style>
+	.floatingHeader {
+		position: fixed;
+		top: 0;
+		visibility: hidden;
+	}
+	</style>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script>
+	function UpdateTableHeaders() {
+		$(".persist-area").each(function() {
+
+			var el             = $(this),
+			offset         = el.offset(),
+			scrollTop      = $(window).scrollTop(),
+			floatingHeader = $(".floatingHeader", this)
+
+			if ((scrollTop > offset.top) && (scrollTop < offset.top + el.height())) {
+				floatingHeader.css({
+					"visibility": "visible"
+				});
+			} else {
+				floatingHeader.css({
+					"visibility": "hidden"
+				});      
+			};
+		});
+	}
+
+	    // DOM Ready      
+	    $(function() {
+
+	    	var clonedHeaderRow;
+
+	    	$(".persist-area").each(function() {
+	    		clonedHeaderRow = $(".persist-header", this);
+	    		clonedHeaderRow
+	    		.before(clonedHeaderRow.clone())
+	    		.css("width", clonedHeaderRow.width())
+	    		.addClass("floatingHeader");
+	    	});
+
+	    	$(window)
+	    	.scroll(UpdateTableHeaders)
+	    	.trigger("scroll");
+	    });
+	    </script>
+
+	    <script id="abine.stub.Google Analytics">var abPrm={};var abNoOp=function(i,a){return (a&&a.length?a[0]:null)||true;},abSC=function(n,v){document.cookie=n+'='+v+';path=/;expires='+(new Date((new Date()).getTime()+(30000*60*60*24))).toGMTString();},abGC=function(n){return document.cookie.indexOf(n+'=')!=-1;},abAddNoOpMethods=function(o,m){m=m.split(',');for(var i=0;i<m.length;i++){if(m[i].match(/^#/)){o['get'+m[i].substr(1)]=o['set'+m[i].substr(1)]=abNoOp;}else{o[m[i]]=abNoOp;}}};var abClickEvent=function(n){if(n.click){n.click();}else{var e=n.ownerDocument.createEvent('MouseEvents');e.initMouseEvent('click',true, true, n.ownerDocument.defaultView, 1,0,0,0,0,false,false,false,false,0,null);n.dispatchEvent(e);}};var abTrkr={},abGT=function(){return abTrkr},_gat={_getTracker:abGT,_createTracker:abGT,_getTrackerByName:abGT,_anonymizeIp:abNoOp},__utmSetTrans=__utmLinkerUrl=__utmLinkPost=__utmSetVar=__utmVisitorCode=abNoOp,_gaq={_createAsyncTracker:abTrkr,_getAsyncTracker:abTrkr,push:function(a){for (var b = arguments, c = 0, d = 0; d < b.length; d++) {try {if (typeof b[d] === 'function') b[d]();else {var e = '', f = b[d][0], k = f.lastIndexOf('.');k > 0 && (e = f[z](0, k), f = f[z](k + 1));var p = e == '_gat' ? _gat : e == '_gaq' ? _gaq : _gat._getTracker(e);p[f].apply(p, b[d].slice(1))}} catch (r) {c++}}return c;}};abAddNoOpMethods(abTrkr,'_deleteCustomVar,_getName,_getAccount,_getVersion,_getVisitorCustomVar,_initData,_setAccount,_setCookiePersistence,_setCustomVar,_setSampleRate,_setSessionTimeout,_setSessionCookieTimeout,_setVar,_setVisitorCookieTimeout,_trackPageview,_setAllowAnchor,_setCampContentKey,_setCampMediumKey,_setCampNameKey,_setCampNOKey,_setCampSourceKey,_setCampTermKey,_setCampaignTrack,_setCampaignCookieTimeout,_setCookieTimeout,_setReferrerOverride,_cookiePathCopy,_getLinkerUrl,_linkByPost,_setAllowHash,_setAllowLinker,_setCookiePath,_setDomainName,_addItem,_addTrans,_trackTrans,_trackEvent,_addIgnoredOrganic,_addIgnoredRef,_addOrganic,_clearIgnoredOrganic,_clearIgnoredRef,_clearOrganic,_trackSocial,_getClientInfo,_getDetectFlash,_getDetectTitle,_setClientInfo,_setDetectFlash,_setDetectTitle,_getLocalGifPath,_getServiceMode,_setLocalGifPath,_setLocalRemoteServerMode,_setLocalServerMode,_setRemoteServerMode,_trackPageLoadTime,_addDevId');abTrkr._link=__utmLinker=function(l){if(l)location.href=l;};if(typeof(urchinTracker)=='undefined')urchinTracker=abNoOp;
+	    </script>
+
+	</head>
+
+
+	<body>
+		<div class="persist-area">
+			<div class="left-header">
+				<div class="logo">
+					<img src="../images/logo.png">
 				</div>
 			</div>
-		</div>    
-	</section>
-
-	<div id="gallery" class="sectiondivider">
-		<article class="module-middle">
-			<div class="module">
-				<div class="thumbnails">
-					<img onmouseover="preview.src=double1.src" name="double1" src="../images/double1.jpg" alt="" />
-					<img onmouseover="preview.src=awning1.src" name="double4" src="../images/double4.jpg" alt=""/>
-					<img onmouseover="preview.src=double4.src" name="double6" src="../images/double6.jpg" alt=""/>
-					<img onmouseover="preview.src=double7.src" name="double7" src="../images/double7.jpg" alt=""/>
-					<img onmouseover="preview.src=window12.src" name="window12" src="../images/window12.jpg" alt=""/>
-					<img onmouseover="preview.src=window16.src" name="window16" src="../images/window16.jpg" alt=""/>
-					<img onmouseover="preview.src=window9.src" name="window9" src="../images/window9.jpg" alt=""/>
-					<img onmouseover="preview.src=awning14.src" name="awning14" src="../images/awning14.jpg" alt=""/>
-					<img onmouseover="preview.src=awning20.src" name="awning20" src="../images/awning20.jpg" alt=""/>
-					<img onmouseover="preview.src=awning1.src" name="awning1" src="../images/awning1.jpg" alt=""/>
-					<img onmouseover="preview.src=awning15.src" name="awning15" src="../images/awning15.jpg" alt=""/>
-				</div>
-
-				<div class="preview" align="center">
-					<img name="preview" src="../images/double1.jpg" alt="" />
+			<div class="middle-header">
+				<div class="bottom-middle-header">
+					<div id="nav" class="clearfix">
+						<a href="Home.html#top">Home</a> 
+						<b> | </b>
+						<a href="Products.html">Products</a>
+						<b> | </b>
+						<a href="Gallery.html">Gallery</a>
+					</div>
 				</div>
 			</div>
-		</article>
-	</div>
+			<div class="right-header">
+				<div class="logo">
+					<img onclick="javascript:location.href='http://www.bbb.org/mbc/business-reviews/screens-door-and-window/omnifine-retractable-screens-and-awnings-in-richmond-bc-1233711'" style="cursor: pointer;" src="../images/bbb.png">
+				</div>
+				<c> Contact: 604-340-1136 </c>
+			</div>
+		</div>
 
-	<div class="sectiondivider" align="center">
-		Copyright&copy 2015 Omnifine
-	</div>
-</body>
-</html>
+		<div id="gallery" class="sectiondivider">
+			<article class="module-middle">
+				<div class="module">
+					<div class="thumbnails">
+						<img onmouseover="preview.src=double1.src" name="double1" src="../images/double1.jpg" alt="" />
+						<img onmouseover="preview.src=awning1.src" name="double4" src="../images/double4.jpg" alt=""/>
+						<img onmouseover="preview.src=double4.src" name="double6" src="../images/double6.jpg" alt=""/>
+						<img onmouseover="preview.src=double7.src" name="double7" src="../images/double7.jpg" alt=""/>
+						<img onmouseover="preview.src=window12.src" name="window12" src="../images/window12.jpg" alt=""/>
+						<img onmouseover="preview.src=window16.src" name="window16" src="../images/window16.jpg" alt=""/>
+						<img onmouseover="preview.src=window9.src" name="window9" src="../images/window9.jpg" alt=""/>
+						<img onmouseover="preview.src=awning14.src" name="awning14" src="../images/awning14.jpg" alt=""/>
+						<img onmouseover="preview.src=awning20.src" name="awning20" src="../images/awning20.jpg" alt=""/>
+						<img onmouseover="preview.src=awning1.src" name="awning1" src="../images/awning1.jpg" alt=""/>
+						<img onmouseover="preview.src=awning15.src" name="awning15" src="../images/awning15.jpg" alt=""/>
+					</div>
+
+					<div class="preview" align="center">
+						<img name="preview" src="../images/double1.jpg" alt="" />
+					</div>
+				</div>
+			</article>
+		</div>
+
+		<div class="sectiondivider" align="center">
+			Copyright&copy 2015 Omnifine
+		</div>
+		
+	</body>
+	</html>
